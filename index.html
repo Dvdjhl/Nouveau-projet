@@ -1,32 +1,359 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stade Loupéen - Tennis de Table</title>
+<meta charset="UTF-8">
+<head>
+  <script src="/assets/jquery.js"></script>
+  <link href="/normalize.css" rel="stylesheet">
+  <style>
+    header {
+      text-align: center;
+      background-image: url("http://rcs-tennisdetable.com/wp-content/uploads/2012/03/Table_Tennis_Riocentro_Pan_2007.jpg");
+      background-size: 100%;
+      background-position: center;
+      border-radius: 0px 100px 10px 8px;
+      
+      color: white;
+      border-right: 3px solid black;
+      border-left: 3px solid black;
+    }
+    body {
+      background-color: rgba(130,130,130,.5);
+    }
+   
+    h1 {
+      font-size: 80px;
+      margin: 0px 0px 0px 0px;
+      padding-top: 20px;
+      background-color: black;
+      border-top-right-radius: 100px;
+      font-family: fantasy;
+      text-shadow: 8px 8px 56px white;
+      color: white;
+    }
+    h2 {
+      text-decoration: underline;
+      font-size: 40px;
+    }
+    h3 {
+      text-decoration: underline;
+      font-size: 30px;
+    }
+    img {
+      margin: 40px 0px 40px 0px;
+      border: 3px solid purple;
+      border-radius: 8px;
+    }
 
-    <title>--- TODO ---</title>
+    article {
+      padding: 10px;
+      font-family: sans-serif;
+    }
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 80px rgba(255,255,255,0.2);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 80px rgba(255,255,255,0.9);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 80px rgba(255,255,255,0.2);
+    }
+}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+#ombre a:hover img {
+    -webkit-box-shadow: 0px 0px 80px rgba(255,255,255,0.5);
+    -moz-box-shadow: 0px 0px 80px rgba(255,255,255,0.5);
+    box-shadow: 0px 0px 80px rgba(255,255,255,0.5);
+    -webkit-animation: pulse 1.5s infinite ease-in-out;
+      }
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- Leave those next 4 lines if you care about users using IE8 -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 36px;
+        padding: 5px;
+      }  
+}
+
+#menu-demo2, #menu-demo2 ul{
+padding:0;
+margin:0;
+list-style:none;
+text-align:center;
+background-color: black;
+border-bottom-left-radius: 8px;
+border-bottom-right-radius: 8px; 
+}
+#menu-demo2 li{
+display:inline-block;
+position:relative;
+border-radius:8px 8px 0 0;
+}
+#menu-demo2 ul li{
+display:inherit;
+border-radius:0;
+}
+#menu-demo2 ul li:hover{
+border-radius:0;
+}
+#menu-demo2 ul li:last-child{
+border-radius:0 0 8px 8px;
+}
+#menu-demo2 ul{
+position:absolute;
+max-height:0;
+left: 0;
+right: 0;
+overflow:hidden;
+-moz-transition: .8s all .3s;
+-webkit-transition: .8s all .3s;
+transition: .8s all .3s;
+}
+#menu-demo2 li:hover ul{
+max-height:15em;
+}
+/* background des liens menus */
+#menu-demo2 li:first-child{
+background-color: #65537A;
+background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+#menu-demo2 li:nth-child(2){
+background-color: #729EBF;
+background-image: -webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+background-image:linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+}
+#menu-demo2 li:nth-child(3){
+background-color: #F6AD1A;
+background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
+background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
+}
+#menu-demo2 li:nth-child(4){
+background-color: #FF40FF;
+background-image:-webkit-linear-gradient(top, #FF40FF 0%, #8000C0 100%);
+background-image:linear-gradient(to bottom, #FF40FF 0%, #8000C0 100%);
+}
+#menu-demo2 li:nth-child(5){
+background-color: #00C0FF;
+background-image:-webkit-linear-gradient(top, #00C0FF 0%, #4000C0 100%);
+background-image:linear-gradient(to bottom, #00C0FF 0%, #4000C0 100%);
+}
+#menu-demo2 li:nth-child(6){
+background-color: #FF4000;
+background-image:-webkit-linear-gradient(top, #FF4000 0%, #C00040 100%);
+background-image:linear-gradient(to bottom, #FF4000 0%, #C00040 100%);
+}
+#menu-demo2 li:nth-child(7){
+background-color: #FFFF00;
+background-image:-webkit-linear-gradient(top, #FFFF00 0%, #FFC000 100%);
+background-image:linear-gradient(to bottom, #FFFF00 0%, #FFC000 100%);
+}
+#menu-demo2 li:last-child{
+background-color: #CFFF6A;
+background-image:-webkit-linear-gradient(top, #CFFF6A 0%, #677F35 100%);
+background-image:linear-gradient(to bottom, #CFFF6A 0%, #677F35 100%);
+}
+/* background des liens sous menus */
+#menu-demo2 li:first-child li{
+background:#2A2333;
+}
+#menu-demo2 li:nth-child(2) li{
+background:#333A40;
+}
+#menu-demo2 li:nth-child(3) li{
+background:#9F391A;
+}
+#menu-demo2 li:nth-child(4) li{
+background:#8000C0;
+}
+#menu-demo2 li:nth-child(5) li{
+background:#4000C0;
+}
+#menu-demo2 li:nth-child(6) li{
+background:#C00040;
+}
+#menu-demo2 li:nth-child(7) li{
+background:#FFC000;
+}
+#menu-demo2 li:last-child li{
+background:#677F35;
+}
+/* background des liens menus et sous menus au survol */
+#menu-demo2 li:first-child:hover, #menu-demo2 li:first-child li:hover{
+background:#65537A;
+}
+#menu-demo2 li:nth-child(2):hover, #menu-demo2 li:nth-child(2) li:hover{
+background:#729EBF;
+}
+#menu-demo2 li:nth-child(3):hover, #menu-demo2 li:nth-child(3) li:hover{
+background:#F6AD1A;
+}
+#menu-demo2 li:nth-child(4):hover, #menu-demo2 li:nth-child(4) li:hover{
+background:#FF40FF;
+}
+#menu-demo2 li:nth-child(5):hover, #menu-demo2 li:nth-child(5) li:hover{
+background:#00C0FF;
+}
+#menu-demo2 li:nth-child(6):hover, #menu-demo2 li:nth-child(6) li:hover{
+background:#FF4000;
+}
+#menu-demo2 li:nth-child(7):hover, #menu-demo2 li:nth-child(7) li:hover{
+background:#FFFF00;
+}
+#menu-demo2 li:last-child:hover, #menu-demo2 li:last-child li:hover{
+background:#CFFF6A;
+}
+/* les a href */
+#menu-demo2 a{
+text-decoration:none;
+display:block;
+padding:8px 20px;
+color:#fff;
+font-family:arial;
+text-shadow: 10px 10px 16px black;
+font-style: italic;
+font-weight: bold;
+font-family: sans-serif;
+}
+#menu-demo2 ul a{
+padding:8px 0;
+}
+#menu-demo2 li:hover li a{
+color:#fff;
+text-transform:inherit;
+}
+#menu-demo2 li:hover a, #menu-demo2 li li:hover a{
+color:#000;
+}
 
 
 
-    <!-- TODO: Here goes your content! -->
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Stade Loupéen</h1>
+    <img src="/Users/dvdjhl/Downloads/sltt.jpg" width=300>
+  
+<ul id="menu-demo2">
+  <li><a href="#">Présentation du Club</a>
+    <ul>
+      <li><a href="#">s-menu Présentation</a></li>
+      <li><a href="#">s-menu Présentation</a></li>
+      <li><a href="#">s-menu Présentation</a></li>
+      <li><a href="#">s-menu Présentation</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Inscription</a>
+    <ul>
+      <li><a href="#">s-menu Inscription</a></li>
+      <li><a href="#">s-menu Inscription</a></li>
+      <li><a href="#">s-menu Inscription</a></li>
+      <li><a href="#">s-menu Inscription</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Les horaires</a>
+    <ul>
+      <li><a href="#">s-menu Les horaires</a></li>
+      <li><a href="#">s-menu Les horaires</a></li>
+      <li><a href="#">s-menu Les horaires</a></li>
+      <li><a href="#">s-menu Les horaires</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Compétitions</a>
+    <ul>
+      <li><a href="http://www.fftt.com/sportif/pclassement/php3/FFTTlj.php3?session=reqid%3D211%26precision%3D23280359">Classements des joueurs</a></li>
+      <li><a href="http://www.fftt.com/sportif/chpt_equipe/chp_div.php?organisme_pere=28&cx_poule=50242&D1=7582&virtuel=0">départementale 2</a></li>
+      <li><a href="http://www.fftt.com/sportif/chpt_equipe/chp_div.php?organisme_pere=28&cx_poule=50269&D1=7587&virtuel=0">départementale 3</a></li>
+      <li><a href="http://www.fftt.com/sportif/chpt_equipe/chp_div.php?organisme_pere=1023&cx_poule=54142&D1=7982&virtuel=0">Régionale</a></li>
+      <li><a href="#">Individuels</a></li>
+      <li><a href="#">Tournoi National</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Les photos</a>
+    <ul>
+      <li><a href="http://www.sltt.net/2012-13/page/page1.html">Tournoi national 2012</a></li>
+      <li><a href="#">s-menu Les photos</a></li>
+      <li><a href="#">s-menu Les photos</a></li>
+      <li><a href="#">s-menu Les photos</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Liens</a>
+    <ul>
+      <li><a href="#">s-menu Liens</a></li>
+      <li><a href="#">s-menu Liens</a></li>
+      <li><a href="#">s-menu Liens</a></li>
+      <li><a href="#">s-menu Liens</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Articles de Presse</a>
+    <ul>
+      <li><a href="#">s-menu Articles de Presse</a></li>
+      <li><a href="#">s-menu Articles de Presse</a></li>
+      <li><a href="#">s-menu Articles de Presse</a></li>
+      <li><a href="#">s-menu Articles de Presse</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Réunions & A. générales</a>
+    <ul>
+      <li><a href="#">s-menu Réunions</a></li>
+      <li><a href="#">s-menu Réunions</a></li>
+      <li><a href="#">s-menu Réunions</a></li>
+      <li><a href="#">s-menu Réunions</a></li>
+    </ul>
+  </li>
+</ul>
 
 
 
-    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
-</html>
+  </header>
+
+
+
+
+  <article>
+    <h2>Compétitions :</h2>
+  <div id="ombre">
+  <a href="#"><img style="float: left;margin-right: 20px;margin-top: 0px;" src="http://www.sltt.net/2012-13/600x402/5.JPG" width="450" alt=""></a>
+    <h3>Le tournoi national :</h3>
+    <p>Un rendez-vous de rentrée incontournable pour les pongistes.
+    La section Tennis de Table Stade loupéen (SLTT) a organisé ce week-end son quatrième tournoi national ouvert aux joueurs de la France entière.
+    Un grand succès puisque la participation et le niveau étaient en hausse par rapport aux éditions précédentes avec 154 joueurs issus de nombreux clubs nationaux venus de toutes les régions de France, pendant deux jours au gymnase de La Loupe.</p>
+  </div>
+  </article>
+
+  <article>
+  
+    <p>Parmi eux, 15 joueurs de haut niveau parmi les 1.000 meilleurs français ainsi que deux championnes parmi les 300 meilleures féminines. Le public a encouragé les joueurs. Et les amateurs ont également pu échanger quelques balles samedi matin.</p>
+  </div>
+  </article>  
+
+  <article>
+  
+    <p>Le Stade loupéen organise deux tournois distincts de tennis de table, samedi et dimanche, au complexe sportif de La Loupe. Les amateurs comme les meilleurs joueurs français feront le spectacle.
+
+    « Au cours de cette rencontre nationale, nous organisons un tournoi loisir gratuit, ouvert aux non-licenciés de tous niveaux et à tous ceux qui veulent taper la petite balle, samedi 7 septembre, de 11 heures à 14 h 30. Une récompense sera remise à chaque participant », indique Stéphane Olivier, le président de la section Tennis de Table du Stade loupéen (SLTT).</p>
+  </div>
+  </article>
+
+  <article>
+  <div id="ombre">
+  <a href="#"><img style="float: left;margin-right: 20px;margin-top: -30px;" src="http://www.sltt.net/2012-13/600x402/117.JPG" width="450" alt=""></a>
+    <p>«Pour la cinquième année consécutive, il reconduit également le samedi dès 15 heures et le dimanche, dès 9 heures, l'organisation d'un tournoi national homologué (catégorie B) sur 24 tables, qui sera ouvert à tous les joueurs et joueuses possédant une licence FFTT. Quelques-uns des meilleurs compétiteurs français qui veulent tester leur état de forme avant de reprendre la saison y participent. Plus de 3.000 euros de dotations sont offerts.L'an dernier, cette compétition avait accueilli 160 licenciés sur deux jours, dont beaucoup de clubs d'Ile-de-France, quelques joueurs d'Eure-et-Loir et un joueur de Grenoble pour le plus éloigné. Nous avions une vingtaine de joueurs et joueuses numérotés, avec parmi eux les meilleurs Français comme Jean-Michel Alner de Paris, classé n° 340 et finaliste dans les deux meilleurs tableaux du tournoi. »
+
+    Bref, on attend du beau monde autour des tables. « L'objectif est également de permettre à notre club de dégager des bénéfices qui financeront nos activités ». L'entrée est gratuite pour le public. Buvette et petite restauration sur place.</p>
+  <button>J'aime</button>
+  </div>       
+  </article>
+  <br /><br />
+
+  <div align="center">
+    <button style="text-align: center; font-size: 20px; padding: 20px; border-radius: 60px; background-color: white; border: 3px solid purple; margin-bottom: 60px; margin-top: 40px;">Nous contacter</button>
+  </div>
+
+  <script>
+    $("button").on("click", function() {
+      alert("Clicked!");
+    });
+  </script>
+</body>
